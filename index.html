@@ -1,4 +1,4 @@
-<!-- SESSION 3: ADDITIONAL QUESTIONS AND EXPANDED FUNCTIONALITY -->
+<!-- SESSION 4: FIXED FRUIT SELECTION AND EXPANDED FUNCTIONALITY -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +68,16 @@
             font-size: 1.5em;
             margin-top: 20px;
         }
+
+        .error {
+            color: #FF6F61;
+        }
+
+        .fruit-image {
+            width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +126,9 @@
         </div>
 
         <div id="result" class="result hidden"></div>
+        <div id="fruitImage" class="hidden">
+            <img id="fruitImageElement" class="fruit-image" src="" alt="Fruit Image">
+        </div>
     </main>
 
     <script>
@@ -148,21 +161,30 @@
             const season = document.getElementById('result').dataset.season;
             const activity = document.getElementById('result').dataset.activity;
             let fruit = '';
+            let imageUrl = '';
 
             if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning') {
                 fruit = 'Apple';
+                imageUrl = 'https://example.com/apple.jpg';
             } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon') {
                 fruit = 'Kiwi';
+                imageUrl = 'https://example.com/kiwi.jpg';
             } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening') {
                 fruit = 'Mango';
+                imageUrl = 'https://example.com/mango.jpg';
             } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night') {
                 fruit = 'Grapes';
+                imageUrl = 'https://example.com/grapes.jpg';
             } else {
-                fruit = 'Fruit not found';
+                fruit = 'Mixed Fruit';
+                imageUrl = 'https://example.com/mixed-fruit.jpg';
+                document.getElementById('result').classList.add('error');
             }
 
             document.getElementById('result').innerText = `You are a ${fruit}!`;
+            document.getElementById('fruitImageElement').src = imageUrl;
             document.getElementById('result').classList.remove('hidden');
+            document.getElementById('fruitImage').classList.remove('hidden');
         }
     </script>
 </body>
