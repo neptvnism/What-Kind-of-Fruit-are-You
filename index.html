@@ -1,4 +1,4 @@
-<!-- SESSION 4: FIXED FRUIT SELECTION AND EXPANDED FUNCTIONALITY -->
+<!-- SESSION 4: EXPANDED FUNCTIONALITY AND STYLING -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,6 +78,56 @@
             height: auto;
             margin-top: 10px;
         }
+
+        footer {
+            background-color: #FFB6C1;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-link {
+            color: #FFC107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Additional Styling for Expanded Features */
+        .question-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .question-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            position: absolute;
+            top: -10px;
+            left: -30px;
+            background-color: #FFB6C1;
+            padding: 5px 10px;
+            border-radius: 50%;
+            color: #FFF;
+        }
+
+        .option-button {
+            width: 200px;
+            font-size: 1.1em;
+            padding: 10px;
+        }
+
+        .result {
+            font-size: 2em;
+            margin-top: 30px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -85,44 +135,56 @@
         <h1>What Kind of Fruit Are You?</h1>
     </header>
     <main>
-        <div id="question1" class="question">
-            What's your favorite color?
-        </div>
-        <div id="options1" class="options">
-            <button class="option-button" onclick="showQuestion2('Red')">Red</button>
-            <button class="option-button" onclick="showQuestion2('Green')">Green</button>
-            <button class="option-button" onclick="showQuestion2('Yellow')">Yellow</button>
-            <button class="option-button" onclick="showQuestion2('Purple')">Purple</button>
-        </div>
-
-        <div id="question2" class="question hidden">
-            What's your favorite season?
-        </div>
-        <div id="options2" class="options hidden">
-            <button class="option-button" onclick="showQuestion3('Winter')">Winter</button>
-            <button class="option-button" onclick="showQuestion3('Spring')">Spring</button>
-            <button class="option-button" onclick="showQuestion3('Summer')">Summer</button>
-            <button class="option-button" onclick="showQuestion3('Fall')">Fall</button>
+        <div id="question1" class="question-container">
+            <div class="question-number">1</div>
+            <div class="question">
+                What's your favorite color?
+            </div>
+            <div id="options1" class="options">
+                <button class="option-button" onclick="showQuestion2('Red')">Red</button>
+                <button class="option-button" onclick="showQuestion2('Green')">Green</button>
+                <button class="option-button" onclick="showQuestion2('Yellow')">Yellow</button>
+                <button class="option-button" onclick="showQuestion2('Purple')">Purple</button>
+            </div>
         </div>
 
-        <div id="question3" class="question hidden">
-            What's your favorite activity?
-        </div>
-        <div id="options3" class="options hidden">
-            <button class="option-button" onclick="showQuestion4('Reading')">Reading</button>
-            <button class="option-button" onclick="showQuestion4('Hiking')">Hiking</button>
-            <button class="option-button" onclick="showQuestion4('Cooking')">Cooking</button>
-            <button class="option-button" onclick="showQuestion4('Gaming')">Gaming</button>
+        <div id="question2" class="question-container hidden">
+            <div class="question-number">2</div>
+            <div class="question">
+                What's your favorite season?
+            </div>
+            <div id="options2" class="options">
+                <button class="option-button" onclick="showQuestion3('Winter')">Winter</button>
+                <button class="option-button" onclick="showQuestion3('Spring')">Spring</button>
+                <button class="option-button" onclick="showQuestion3('Summer')">Summer</button>
+                <button class="option-button" onclick="showQuestion3('Fall')">Fall</button>
+            </div>
         </div>
 
-        <div id="question4" class="question hidden">
-            What's your favorite time of day?
+        <div id="question3" class="question-container hidden">
+            <div class="question-number">3</div>
+            <div class="question">
+                What's your favorite activity?
+            </div>
+            <div id="options3" class="options">
+                <button class="option-button" onclick="showQuestion4('Reading')">Reading</button>
+                <button class="option-button" onclick="showQuestion4('Hiking')">Hiking</button>
+                <button class="option-button" onclick="showQuestion4('Cooking')">Cooking</button>
+                <button class="option-button" onclick="showQuestion4('Gaming')">Gaming</button>
+            </div>
         </div>
-        <div id="options4" class="options hidden">
-            <button class="option-button" onclick="showResult('Morning')">Morning</button>
-            <button class="option-button" onclick="showResult('Afternoon')">Afternoon</button>
-            <button class="option-button" onclick="showResult('Evening')">Evening</button>
-            <button class="option-button" onclick="showResult('Night')">Night</button>
+
+        <div id="question4" class="question-container hidden">
+            <div class="question-number">4</div>
+            <div class="question">
+                What's your favorite time of day?
+            </div>
+            <div id="options4" class="options">
+                <button class="option-button" onclick="showResult('Morning')">Morning</button>
+                <button class="option-button" onclick="showResult('Afternoon')">Afternoon</button>
+                <button class="option-button" onclick="showResult('Evening')">Evening</button>
+                <button class="option-button" onclick="showResult('Night')">Night</button>
+            </div>
         </div>
 
         <div id="result" class="result hidden"></div>
@@ -131,7 +193,12 @@
         </div>
     </main>
 
+    <footer>
+        <a href="https://example.com" class="footer-link">Learn More About Fruits</a>
+    </footer>
+
     <script>
+        // Show the next question and store the answer
         function showQuestion2(color) {
             document.getElementById('question1').classList.add('hidden');
             document.getElementById('options1').classList.add('hidden');
@@ -176,15 +243,16 @@
                 fruit = 'Grapes';
                 imageUrl = 'https://example.com/grapes.jpg';
             } else {
-                fruit = 'Mixed Fruit';
-                imageUrl = 'https://example.com/mixed-fruit.jpg';
-                document.getElementById('result').classList.add('error');
+                fruit = 'Unknown Fruit';
+                imageUrl = 'https://example.com/unknown.jpg';
             }
 
-            document.getElementById('result').innerText = `You are a ${fruit}!`;
-            document.getElementById('fruitImageElement').src = imageUrl;
+            document.getElementById('question4').classList.add('hidden');
+            document.getElementById('options4').classList.add('hidden');
             document.getElementById('result').classList.remove('hidden');
             document.getElementById('fruitImage').classList.remove('hidden');
+            document.getElementById('result').textContent = `You are a ${fruit}!`;
+            document.getElementById('fruitImageElement').src = imageUrl;
         }
     </script>
 </body>
