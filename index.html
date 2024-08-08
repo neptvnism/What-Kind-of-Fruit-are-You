@@ -1,4 +1,4 @@
-<!-- SESSION 5: EXTENDED FUNCTIONALITY WITH MORE QUESTIONS AND FRUITS -->
+<!-- SESSION 5: ENHANCED FUNCTIONALITY AND STYLING WITH EMOJIS -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -128,6 +128,7 @@
             font-weight: bold;
         }
 
+        /* New Styles */
         .emoji-result {
             font-size: 3em;
             margin-top: 20px;
@@ -150,78 +151,58 @@
         <h1>What Kind of Fruit Are You?</h1>
     </header>
     <main>
-        <!-- Question 1 -->
         <div id="question1" class="question-container active">
             <div class="question-number">1</div>
-            <div class="question">What's your favorite color?</div>
+            <div class="question">
+                What's your favorite color?
+            </div>
             <div id="options1" class="options">
                 <button class="option-button" onclick="showQuestion2('Red')">Red 🍎</button>
                 <button class="option-button" onclick="showQuestion2('Green')">Green 🥝</button>
                 <button class="option-button" onclick="showQuestion2('Yellow')">Yellow 🍌</button>
                 <button class="option-button" onclick="showQuestion2('Purple')">Purple 🍇</button>
-                <button class="option-button" onclick="showQuestion2('Orange')">Orange 🍊</button>
-                <button class="option-button" onclick="showQuestion2('Pink')">Pink 🍑</button>
-                <button class="option-button" onclick="showQuestion2('Blue')">Blue 🫐</button>
             </div>
         </div>
 
-        <!-- Question 2 -->
         <div id="question2" class="question-container hidden">
             <div class="question-number">2</div>
-            <div class="question">What's your favorite season?</div>
+            <div class="question">
+                What's your favorite season?
+            </div>
             <div id="options2" class="options">
                 <button class="option-button" onclick="showQuestion3('Winter')">Winter ❄️</button>
                 <button class="option-button" onclick="showQuestion3('Spring')">Spring 🌸</button>
                 <button class="option-button" onclick="showQuestion3('Summer')">Summer ☀️</button>
                 <button class="option-button" onclick="showQuestion3('Fall')">Fall 🍂</button>
-                <button class="option-button" onclick="showQuestion3('Monsoon')">Monsoon 🌧️</button>
             </div>
         </div>
 
-        <!-- Question 3 -->
         <div id="question3" class="question-container hidden">
             <div class="question-number">3</div>
-            <div class="question">What's your favorite activity?</div>
+            <div class="question">
+                What's your favorite activity?
+            </div>
             <div id="options3" class="options">
                 <button class="option-button" onclick="showQuestion4('Reading')">Reading 📚</button>
                 <button class="option-button" onclick="showQuestion4('Hiking')">Hiking 🥾</button>
                 <button class="option-button" onclick="showQuestion4('Cooking')">Cooking 🍳</button>
                 <button class="option-button" onclick="showQuestion4('Gaming')">Gaming 🎮</button>
-                <button class="option-button" onclick="showQuestion4('Traveling')">Traveling ✈️</button>
-                <button class="option-button" onclick="showQuestion4('Gardening')">Gardening 🌻</button>
-                <button class="option-button" onclick="showQuestion4('Swimming')">Swimming 🏊</button>
             </div>
         </div>
 
-        <!-- Question 4 -->
         <div id="question4" class="question-container hidden">
             <div class="question-number">4</div>
-            <div class="question">What's your favorite time of day?</div>
+            <div class="question">
+                What's your favorite time of day?
+            </div>
             <div id="options4" class="options">
-                <button class="option-button" onclick="showQuestion5('Morning')">Morning 🌅</button>
-                <button class="option-button" onclick="showQuestion5('Afternoon')">Afternoon ☀️</button>
-                <button class="option-button" onclick="showQuestion5('Evening')">Evening 🌇</button>
-                <button class="option-button" onclick="showQuestion5('Night')">Night 🌙</button>
-                <button class="option-button" onclick="showQuestion5('Late Night')">Late Night 🌌</button>
+                <button class="option-button" onclick="showResult('Morning')">Morning 🌅</button>
+                <button class="option-button" onclick="showResult('Afternoon')">Afternoon ☀️</button>
+                <button class="option-button" onclick="showResult('Evening')">Evening 🌇</button>
+                <button class="option-button" onclick="showResult('Night')">Night 🌙</button>
             </div>
         </div>
 
-        <!-- Question 5 -->
-        <div id="question5" class="question-container hidden">
-            <div class="question-number">5</div>
-            <div class="question">What's your favorite type of music?</div>
-            <div id="options5" class="options">
-                <button class="option-button" onclick="showResult('Pop')">Pop 🎵</button>
-                <button class="option-button" onclick="showResult('Rock')">Rock 🎸</button>
-                <button class="option-button" onclick="showResult('Classical')">Classical 🎻</button>
-                <button class="option-button" onclick="showResult('Jazz')">Jazz 🎷</button>
-                <button class="option-button" onclick="showResult('Electronic')">Electronic 🎧</button>
-                <button class="option-button" onclick="showResult('Hip-Hop')">Hip-Hop 🎤</button>
-                <button class="option-button" onclick="showResult('Reggae')">Reggae 🎶</button>
-            </div>
-        </div>
-
-        <!-- Result -->
         <div id="result" class="result hidden">
             <div id="fruitEmoji" class="emoji-result"></div>
             <div id="fruitDescription" class="result-description"></div>
@@ -229,80 +210,62 @@
     </main>
 
     <footer>
-        <a href="https://www.example.com" class="footer-link">Learn More About Fruits!</a>
+        <a href="https://example.com" class="footer-link">Learn More About Fruits</a>
     </footer>
 
     <script>
-        // Initialize user choices
-        let userChoices = {
-            color: '',
-            season: '',
-            activity: '',
-            timeOfDay: '',
-            music: ''
-        };
-
-        // Show next question and save choice
+        // Show the next question and store the answer
         function showQuestion2(color) {
-            userChoices.color = color;
-            document.getElementById('question1').classList.add('hidden');
-            document.getElementById('question2').classList.remove('hidden');
+            document.getElementById('question1').classList.remove('active');
+            document.getElementById('options1').classList.add('hidden');
+            document.getElementById('question2').classList.add('active');
+            document.getElementById('options2').classList.remove('hidden');
+            document.getElementById('result').dataset.color = color;
         }
 
         function showQuestion3(season) {
-            userChoices.season = season;
-            document.getElementById('question2').classList.add('hidden');
-            document.getElementById('question3').classList.remove('hidden');
+            document.getElementById('question2').classList.remove('active');
+            document.getElementById('options2').classList.add('hidden');
+            document.getElementById('question3').classList.add('active');
+            document.getElementById('options3').classList.remove('hidden');
+            document.getElementById('result').dataset.season = season;
         }
 
         function showQuestion4(activity) {
-            userChoices.activity = activity;
-            document.getElementById('question3').classList.add('hidden');
-            document.getElementById('question4').classList.remove('hidden');
+            document.getElementById('question3').classList.remove('active');
+            document.getElementById('options3').classList.add('hidden');
+            document.getElementById('question4').classList.add('active');
+            document.getElementById('options4').classList.remove('hidden');
+            document.getElementById('result').dataset.activity = activity;
         }
 
-        function showQuestion5(timeOfDay) {
-            userChoices.timeOfDay = timeOfDay;
-            document.getElementById('question4').classList.add('hidden');
-            document.getElementById('question5').classList.remove('hidden');
-        }
+        function showResult(timeOfDay) {
+            const color = document.getElementById('result').dataset.color;
+            const season = document.getElementById('result').dataset.season;
+            const activity = document.getElementById('result').dataset.activity;
+            let fruitEmoji = '';
+            let description = '';
 
-        function showResult(music) {
-            userChoices.music = music;
-            document.getElementById('question5').classList.add('hidden');
-            document.getElementById('result').classList.remove('hidden');
-
-            let { color, season, activity, timeOfDay, music } = userChoices;
-            let fruitEmoji = '🍍'; // Default fruit
-            let description = 'You are a Pineapple: unique, tropical, and always a surprise!';
-
-            // Logic to determine fruit based on answers
-            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning' && music === 'Classical') {
+            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning') {
                 fruitEmoji = '🍎'; // Apple
-                description = 'You are an Apple: classic, wise, and cozy!';
-            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon' && music === 'Jazz') {
+                description = 'You are a classic Apple: sweet, refreshing, and always in season!';
+            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon') {
                 fruitEmoji = '🥝'; // Kiwi
                 description = 'You are a Kiwi: vibrant, adventurous, and full of zest!';
-            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening' && music === 'Pop') {
+            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening') {
                 fruitEmoji = '🍌'; // Banana
                 description = 'You are a Banana: fun, energetic, and perfect for a summer day!';
-            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night' && music === 'Electronic') {
+            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night') {
                 fruitEmoji = '🍇'; // Grapes
                 description = 'You are a Grape: sweet, relaxed, and ideal for cozy nights in!';
-            } else if (color === 'Orange' && season === 'Summer' && activity === 'Traveling' && timeOfDay === 'Afternoon' && music === 'Reggae') {
-                fruitEmoji = '🍊'; // Orange
-                description = 'You are an Orange: vibrant, refreshing, and always ready for an adventure!';
-            } else if (color === 'Pink' && season === 'Spring' && activity === 'Gardening' && timeOfDay === 'Morning' && music === 'Pop') {
-                fruitEmoji = '🍑'; // Peach
-                description = 'You are a Peach: sweet, nurturing, and full of warmth!';
-            } else if (color === 'Blue' && season === 'Winter' && activity === 'Swimming' && timeOfDay === 'Night' && music === 'Rock') {
-                fruitEmoji = '🫐'; // Blueberry
-                description = 'You are a Blueberry: cool, calm, and perfect for a peaceful night!';
             } else {
                 fruitEmoji = '🍍'; // Pineapple as a fallback
                 description = 'You are a Pineapple: unique, tropical, and always a surprise!';
             }
 
+            document.getElementById('question4').classList.add('hidden');
+            document.getElementById('options4').classList.add('hidden');
+            document.getElementById('result').classList.remove('hidden');
             document.getElementById('fruitEmoji').textContent = fruitEmoji;
             document.getElementById('fruitDescription').textContent = description;
         }
