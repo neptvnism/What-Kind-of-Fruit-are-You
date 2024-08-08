@@ -1,4 +1,4 @@
-<!-- SESSION 2: ADDITIONAL QUESTIONS AND FUNCTIONALITY -->
+<!-- SESSION 3: ADDITIONAL QUESTIONS AND EXPANDED FUNCTIONALITY -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,10 +89,30 @@
             What's your favorite season?
         </div>
         <div id="options2" class="options hidden">
-            <button class="option-button" onclick="showResult('Winter')">Winter</button>
-            <button class="option-button" onclick="showResult('Spring')">Spring</button>
-            <button class="option-button" onclick="showResult('Summer')">Summer</button>
-            <button class="option-button" onclick="showResult('Fall')">Fall</button>
+            <button class="option-button" onclick="showQuestion3('Winter')">Winter</button>
+            <button class="option-button" onclick="showQuestion3('Spring')">Spring</button>
+            <button class="option-button" onclick="showQuestion3('Summer')">Summer</button>
+            <button class="option-button" onclick="showQuestion3('Fall')">Fall</button>
+        </div>
+
+        <div id="question3" class="question hidden">
+            What's your favorite activity?
+        </div>
+        <div id="options3" class="options hidden">
+            <button class="option-button" onclick="showQuestion4('Reading')">Reading</button>
+            <button class="option-button" onclick="showQuestion4('Hiking')">Hiking</button>
+            <button class="option-button" onclick="showQuestion4('Cooking')">Cooking</button>
+            <button class="option-button" onclick="showQuestion4('Gaming')">Gaming</button>
+        </div>
+
+        <div id="question4" class="question hidden">
+            What's your favorite time of day?
+        </div>
+        <div id="options4" class="options hidden">
+            <button class="option-button" onclick="showResult('Morning')">Morning</button>
+            <button class="option-button" onclick="showResult('Afternoon')">Afternoon</button>
+            <button class="option-button" onclick="showResult('Evening')">Evening</button>
+            <button class="option-button" onclick="showResult('Night')">Night</button>
         </div>
 
         <div id="result" class="result hidden"></div>
@@ -104,21 +124,38 @@
             document.getElementById('options1').classList.add('hidden');
             document.getElementById('question2').classList.remove('hidden');
             document.getElementById('options2').classList.remove('hidden');
-            // Store the selected color
             document.getElementById('result').dataset.color = color;
         }
 
-        function showResult(season) {
+        function showQuestion3(season) {
+            document.getElementById('question2').classList.add('hidden');
+            document.getElementById('options2').classList.add('hidden');
+            document.getElementById('question3').classList.remove('hidden');
+            document.getElementById('options3').classList.remove('hidden');
+            document.getElementById('result').dataset.season = season;
+        }
+
+        function showQuestion4(activity) {
+            document.getElementById('question3').classList.add('hidden');
+            document.getElementById('options3').classList.add('hidden');
+            document.getElementById('question4').classList.remove('hidden');
+            document.getElementById('options4').classList.remove('hidden');
+            document.getElementById('result').dataset.activity = activity;
+        }
+
+        function showResult(timeOfDay) {
             const color = document.getElementById('result').dataset.color;
+            const season = document.getElementById('result').dataset.season;
+            const activity = document.getElementById('result').dataset.activity;
             let fruit = '';
 
-            if (color === 'Red' && season === 'Winter') {
+            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning') {
                 fruit = 'Apple';
-            } else if (color === 'Green' && season === 'Spring') {
+            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon') {
                 fruit = 'Kiwi';
-            } else if (color === 'Yellow' && season === 'Summer') {
+            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening') {
                 fruit = 'Mango';
-            } else if (color === 'Purple' && season === 'Fall') {
+            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night') {
                 fruit = 'Grapes';
             } else {
                 fruit = 'Fruit not found';
