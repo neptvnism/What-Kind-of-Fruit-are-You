@@ -1,4 +1,4 @@
-<!-- SESSION 1: BASIC STRUCTURE AND STYLING SETUP -->
+<!-- SESSION 2: ADDITIONAL QUESTIONS AND FUNCTIONALITY -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +59,15 @@
         .option-button:hover {
             background-color: #FFD700;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -66,15 +75,58 @@
         <h1>What Kind of Fruit Are You?</h1>
     </header>
     <main>
-        <div class="question">
+        <div id="question1" class="question">
             What's your favorite color?
         </div>
-        <div class="options">
-            <button class="option-button">Red</button>
-            <button class="option-button">Green</button>
-            <button class="option-button">Yellow</button>
-            <button class="option-button">Purple</button>
+        <div id="options1" class="options">
+            <button class="option-button" onclick="showQuestion2('Red')">Red</button>
+            <button class="option-button" onclick="showQuestion2('Green')">Green</button>
+            <button class="option-button" onclick="showQuestion2('Yellow')">Yellow</button>
+            <button class="option-button" onclick="showQuestion2('Purple')">Purple</button>
         </div>
+
+        <div id="question2" class="question hidden">
+            What's your favorite season?
+        </div>
+        <div id="options2" class="options hidden">
+            <button class="option-button" onclick="showResult('Winter')">Winter</button>
+            <button class="option-button" onclick="showResult('Spring')">Spring</button>
+            <button class="option-button" onclick="showResult('Summer')">Summer</button>
+            <button class="option-button" onclick="showResult('Fall')">Fall</button>
+        </div>
+
+        <div id="result" class="result hidden"></div>
     </main>
+
+    <script>
+        function showQuestion2(color) {
+            document.getElementById('question1').classList.add('hidden');
+            document.getElementById('options1').classList.add('hidden');
+            document.getElementById('question2').classList.remove('hidden');
+            document.getElementById('options2').classList.remove('hidden');
+            // Store the selected color
+            document.getElementById('result').dataset.color = color;
+        }
+
+        function showResult(season) {
+            const color = document.getElementById('result').dataset.color;
+            let fruit = '';
+
+            if (color === 'Red' && season === 'Winter') {
+                fruit = 'Apple';
+            } else if (color === 'Green' && season === 'Spring') {
+                fruit = 'Kiwi';
+            } else if (color === 'Yellow' && season === 'Summer') {
+                fruit = 'Mango';
+            } else if (color === 'Purple' && season === 'Fall') {
+                fruit = 'Grapes';
+            } else {
+                fruit = 'Fruit not found';
+            }
+
+            document.getElementById('result').innerText = `You are a ${fruit}!`;
+            document.getElementById('result').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
