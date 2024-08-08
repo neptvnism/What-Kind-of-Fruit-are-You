@@ -1,0 +1,80 @@
+<!-- SESSION 1: BASIC STRUCTURE AND STYLING SETUP -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Kind of Fruit Are You?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-color: #FFFBF2;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FFB6C1;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .question {
+            margin: 30px 0;
+            font-size: 1.5em;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .option-button {
+            background-color: #FFF3CD;
+            border: 2px solid #FFC107;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option-button:hover {
+            background-color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>What Kind of Fruit Are You?</h1>
+    </header>
+    <main>
+        <div class="question">
+            What's your favorite color?
+        </div>
+        <div class="options">
+            <button class="option-button">Red</button>
+            <button class="option-button">Green</button>
+            <button class="option-button">Yellow</button>
+            <button class="option-button">Purple</button>
+        </div>
+    </main>
+</body>
+</html>
