@@ -1,4 +1,4 @@
-<!-- SESSION 5: ENHANCED FUNCTIONALITY AND STYLING WITH EMOJIS -->
+<!-- SESSION 6 MORE QUESTIONS -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -196,10 +196,88 @@
                 What's your favorite time of day?
             </div>
             <div id="options4" class="options">
-                <button class="option-button" onclick="showResult('Morning')">Morning 🌅</button>
-                <button class="option-button" onclick="showResult('Afternoon')">Afternoon ☀️</button>
-                <button class="option-button" onclick="showResult('Evening')">Evening 🌇</button>
-                <button class="option-button" onclick="showResult('Night')">Night 🌙</button>
+                <button class="option-button" onclick="showQuestion5('Morning')">Morning 🌅</button>
+                <button class="option-button" onclick="showQuestion5('Afternoon')">Afternoon ☀️</button>
+                <button class="option-button" onclick="showQuestion5('Evening')">Evening 🌇</button>
+                <button class="option-button" onclick="showQuestion5('Night')">Night 🌙</button>
+            </div>
+        </div>
+
+        <div id="question5" class="question-container hidden">
+            <div class="question-number">5</div>
+            <div class="question">
+                What's your favorite animal?
+            </div>
+            <div id="options5" class="options">
+                <button class="option-button" onclick="showQuestion6('Dog')">Dog 🐶</button>
+                <button class="option-button" onclick="showQuestion6('Cat')">Cat 🐱</button>
+                <button class="option-button" onclick="showQuestion6('Bird')">Bird 🐦</button>
+                <button class="option-button" onclick="showQuestion6('Fish')">Fish 🐠</button>
+            </div>
+        </div>
+
+        <div id="question6" class="question-container hidden">
+            <div class="question-number">6</div>
+            <div class="question">
+                What's your favorite music genre?
+            </div>
+            <div id="options6" class="options">
+                <button class="option-button" onclick="showQuestion7('Pop')">Pop 🎤</button>
+                <button class="option-button" onclick="showQuestion7('Rock')">Rock 🎸</button>
+                <button class="option-button" onclick="showQuestion7('Classical')">Classical 🎻</button>
+                <button class="option-button" onclick="showQuestion7('Jazz')">Jazz 🎷</button>
+            </div>
+        </div>
+
+        <div id="question7" class="question-container hidden">
+            <div class="question-number">7</div>
+            <div class="question">
+                What's your favorite type of book?
+            </div>
+            <div id="options7" class="options">
+                <button class="option-button" onclick="showQuestion8('Fiction')">Fiction 📚</button>
+                <button class="option-button" onclick="showQuestion8('Non-Fiction')">Non-Fiction 📰</button>
+                <button class="option-button" onclick="showQuestion8('Mystery')">Mystery 🕵️‍♀️</button>
+                <button class="option-button" onclick="showQuestion8('Romance')">Romance ❤️</button>
+            </div>
+        </div>
+
+        <div id="question8" class="question-container hidden">
+            <div class="question-number">8</div>
+            <div class="question">
+                What's your favorite type of weather?
+            </div>
+            <div id="options8" class="options">
+                <button class="option-button" onclick="showQuestion9('Sunny')">Sunny ☀️</button>
+                <button class="option-button" onclick="showQuestion9('Rainy')">Rainy 🌧️</button>
+                <button class="option-button" onclick="showQuestion9('Snowy')">Snowy ❄️</button>
+                <button class="option-button" onclick="showQuestion9('Cloudy')">Cloudy ☁️</button>
+            </div>
+        </div>
+
+        <div id="question9" class="question-container hidden">
+            <div class="question-number">9</div>
+            <div class="question">
+                What's your favorite sport?
+            </div>
+            <div id="options9" class="options">
+                <button class="option-button" onclick="showQuestion10('Soccer')">Soccer ⚽</button>
+                <button class="option-button" onclick="showQuestion10('Basketball')">Basketball 🏀</button>
+                <button class="option-button" onclick="showQuestion10('Baseball')">Baseball ⚾</button>
+                <button class="option-button" onclick="showQuestion10('Tennis')">Tennis 🎾</button>
+            </div>
+        </div>
+
+        <div id="question10" class="question-container hidden">
+            <div class="question-number">10</div>
+            <div class="question">
+                What's your favorite hobby?
+            </div>
+            <div id="options10" class="options">
+                <button class="option-button" onclick="showResult('Photography')">Photography 📸</button>
+                <button class="option-button" onclick="showResult('Painting')">Painting 🎨</button>
+                <button class="option-button" onclick="showResult('Music')">Music 🎶</button>
+                <button class="option-button" onclick="showResult('Writing')">Writing ✍️</button>
             </div>
         </div>
 
@@ -239,23 +317,77 @@
             document.getElementById('result').dataset.activity = activity;
         }
 
-        function showResult(timeOfDay) {
+        function showQuestion5(timeOfDay) {
+            document.getElementById('question4').classList.remove('active');
+            document.getElementById('options4').classList.add('hidden');
+            document.getElementById('question5').classList.add('active');
+            document.getElementById('options5').classList.remove('hidden');
+            document.getElementById('result').dataset.timeOfDay = timeOfDay;
+        }
+
+        function showQuestion6(animal) {
+            document.getElementById('question5').classList.remove('active');
+            document.getElementById('options5').classList.add('hidden');
+            document.getElementById('question6').classList.add('active');
+            document.getElementById('options6').classList.remove('hidden');
+            document.getElementById('result').dataset.animal = animal;
+        }
+
+        function showQuestion7(musicGenre) {
+            document.getElementById('question6').classList.remove('active');
+            document.getElementById('options6').classList.add('hidden');
+            document.getElementById('question7').classList.add('active');
+            document.getElementById('options7').classList.remove('hidden');
+            document.getElementById('result').dataset.musicGenre = musicGenre;
+        }
+
+        function showQuestion8(bookType) {
+            document.getElementById('question7').classList.remove('active');
+            document.getElementById('options7').classList.add('hidden');
+            document.getElementById('question8').classList.add('active');
+            document.getElementById('options8').classList.remove('hidden');
+            document.getElementById('result').dataset.bookType = bookType;
+        }
+
+        function showQuestion9(weather) {
+            document.getElementById('question8').classList.remove('active');
+            document.getElementById('options8').classList.add('hidden');
+            document.getElementById('question9').classList.add('active');
+            document.getElementById('options9').classList.remove('hidden');
+            document.getElementById('result').dataset.weather = weather;
+        }
+
+        function showQuestion10(sport) {
+            document.getElementById('question9').classList.remove('active');
+            document.getElementById('options9').classList.add('hidden');
+            document.getElementById('question10').classList.add('active');
+            document.getElementById('options10').classList.remove('hidden');
+            document.getElementById('result').dataset.sport = sport;
+        }
+
+        function showResult(hobby) {
             const color = document.getElementById('result').dataset.color;
             const season = document.getElementById('result').dataset.season;
             const activity = document.getElementById('result').dataset.activity;
+            const timeOfDay = document.getElementById('result').dataset.timeOfDay;
+            const animal = document.getElementById('result').dataset.animal;
+            const musicGenre = document.getElementById('result').dataset.musicGenre;
+            const bookType = document.getElementById('result').dataset.bookType;
+            const weather = document.getElementById('result').dataset.weather;
+            const sport = document.getElementById('result').dataset.sport;
             let fruitEmoji = '';
             let description = '';
 
-            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning') {
+            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning' && animal === 'Dog' && musicGenre === 'Pop' && bookType === 'Fiction' && weather === 'Sunny' && sport === 'Soccer' && hobby === 'Photography') {
                 fruitEmoji = '🍎'; // Apple
                 description = 'You are a classic Apple: sweet, refreshing, and always in season!';
-            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon') {
+            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon' && animal === 'Cat' && musicGenre === 'Rock' && bookType === 'Non-Fiction' && weather === 'Rainy' && sport === 'Basketball' && hobby === 'Painting') {
                 fruitEmoji = '🥝'; // Kiwi
                 description = 'You are a Kiwi: vibrant, adventurous, and full of zest!';
-            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening') {
+            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening' && animal === 'Bird' && musicGenre === 'Classical' && bookType === 'Mystery' && weather === 'Snowy' && sport === 'Baseball' && hobby === 'Music') {
                 fruitEmoji = '🍌'; // Banana
                 description = 'You are a Banana: fun, energetic, and perfect for a summer day!';
-            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night') {
+            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night' && animal === 'Fish' && musicGenre === 'Jazz' && bookType === 'Romance' && weather === 'Cloudy' && sport === 'Tennis' && hobby === 'Writing') {
                 fruitEmoji = '🍇'; // Grapes
                 description = 'You are a Grape: sweet, relaxed, and ideal for cozy nights in!';
             } else {
@@ -263,8 +395,8 @@
                 description = 'You are a Pineapple: unique, tropical, and always a surprise!';
             }
 
-            document.getElementById('question4').classList.add('hidden');
-            document.getElementById('options4').classList.add('hidden');
+            document.getElementById('question10').classList.add('hidden');
+            document.getElementById('options10').classList.add('hidden');
             document.getElementById('result').classList.remove('hidden');
             document.getElementById('fruitEmoji').textContent = fruitEmoji;
             document.getElementById('fruitDescription').textContent = description;
