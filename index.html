@@ -1,4 +1,4 @@
-// SESSION 7, IMPROVED LOGIC, DEBUGGING, AND MORE FRUITS
+// SESSION 7
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,26 +78,6 @@
             margin-top: 10px;
         }
 
-        footer {
-            background-color: #FFB6C1;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-link {
-            color: #FFC107;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-
         /* Additional Styling for Expanded Features */
         .question-container {
             position: relative;
@@ -157,10 +137,10 @@
                 What's your favorite color?
             </div>
             <div id="options1" class="options">
-                <button class="option-button" onclick="showQuestion2('Red')">Red 🍎</button>
-                <button class="option-button" onclick="showQuestion2('Green')">Green 🥝</button>
-                <button class="option-button" onclick="showQuestion2('Yellow')">Yellow 🍌</button>
-                <button class="option-button" onclick="showQuestion2('Purple')">Purple 🍇</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Red')">Red 🍎</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Green')">Green 🥝</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Yellow')">Yellow 🍌</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Purple')">Purple 🍇</button>
             </div>
         </div>
 
@@ -170,10 +150,10 @@
                 What's your favorite season?
             </div>
             <div id="options2" class="options">
-                <button class="option-button" onclick="showQuestion3('Winter')">Winter ❄️</button>
-                <button class="option-button" onclick="showQuestion3('Spring')">Spring 🌸</button>
-                <button class="option-button" onclick="showQuestion3('Summer')">Summer ☀️</button>
-                <button class="option-button" onclick="showQuestion3('Fall')">Fall 🍂</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Winter')">Winter ❄️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Spring')">Spring 🌸</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Summer')">Summer ☀️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Fall')">Fall 🍂</button>
             </div>
         </div>
 
@@ -183,10 +163,10 @@
                 What's your favorite activity?
             </div>
             <div id="options3" class="options">
-                <button class="option-button" onclick="showQuestion4('Reading')">Reading 📚</button>
-                <button class="option-button" onclick="showQuestion4('Hiking')">Hiking 🥾</button>
-                <button class="option-button" onclick="showQuestion4('Cooking')">Cooking 🍳</button>
-                <button class="option-button" onclick="showQuestion4('Gaming')">Gaming 🎮</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Reading')">Reading 📚</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Hiking')">Hiking 🥾</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Cooking')">Cooking 🍳</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Gaming')">Gaming 🎮</button>
             </div>
         </div>
 
@@ -196,10 +176,10 @@
                 What's your favorite time of day?
             </div>
             <div id="options4" class="options">
-                <button class="option-button" onclick="showQuestion5('Morning')">Morning 🌅</button>
-                <button class="option-button" onclick="showQuestion5('Afternoon')">Afternoon ☀️</button>
-                <button class="option-button" onclick="showQuestion5('Evening')">Evening 🌇</button>
-                <button class="option-button" onclick="showQuestion5('Night')">Night 🌙</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Morning')">Morning 🌅</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Afternoon')">Afternoon ☀️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Evening')">Evening 🌇</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Night')">Night 🌙</button>
             </div>
         </div>
 
@@ -209,10 +189,10 @@
                 What's your favorite animal?
             </div>
             <div id="options5" class="options">
-                <button class="option-button" onclick="showQuestion6('Dog')">Dog 🐶</button>
-                <button class="option-button" onclick="showQuestion6('Cat')">Cat 🐱</button>
-                <button class="option-button" onclick="showQuestion6('Bird')">Bird 🐦</button>
-                <button class="option-button" onclick="showQuestion6('Fish')">Fish 🐠</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Dog')">Dog 🐶</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Cat')">Cat 🐱</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Bird')">Bird 🐦</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Fish')">Fish 🐠</button>
             </div>
         </div>
 
@@ -222,10 +202,10 @@
                 What's your favorite music genre?
             </div>
             <div id="options6" class="options">
-                <button class="option-button" onclick="showQuestion7('Pop')">Pop 🎤</button>
-                <button class="option-button" onclick="showQuestion7('Rock')">Rock 🎸</button>
-                <button class="option-button" onclick="showQuestion7('Classical')">Classical 🎻</button>
-                <button class="option-button" onclick="showQuestion7('Jazz')">Jazz 🎷</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Pop')">Pop 🎤</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Rock')">Rock 🎸</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Classical')">Classical 🎻</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Jazz')">Jazz 🎷</button>
             </div>
         </div>
 
@@ -235,10 +215,10 @@
                 What's your favorite type of book?
             </div>
             <div id="options7" class="options">
-                <button class="option-button" onclick="showQuestion8('Fiction')">Fiction 📚</button>
-                <button class="option-button" onclick="showQuestion8('Non-Fiction')">Non-Fiction 📰</button>
-                <button class="option-button" onclick="showQuestion8('Mystery')">Mystery 🕵️‍♀️</button>
-                <button class="option-button" onclick="showQuestion8('Romance')">Romance ❤️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Fiction')">Fiction 📚</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Non-Fiction')">Non-Fiction 📰</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Mystery')">Mystery 🕵️‍♀️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Romance')">Romance ❤️</button>
             </div>
         </div>
 
@@ -248,10 +228,10 @@
                 What's your favorite type of weather?
             </div>
             <div id="options8" class="options">
-                <button class="option-button" onclick="showQuestion9('Sunny')">Sunny ☀️</button>
-                <button class="option-button" onclick="showQuestion9('Rainy')">Rainy 🌧️</button>
-                <button class="option-button" onclick="showQuestion9('Snowy')">Snowy ❄️</button>
-                <button class="option-button" onclick="showQuestion9('Cloudy')">Cloudy ☁️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Sunny')">Sunny ☀️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Rainy')">Rainy 🌧️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Snowy')">Snowy ❄️</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Cloudy')">Cloudy ☁️</button>
             </div>
         </div>
 
@@ -261,10 +241,10 @@
                 What's your favorite sport?
             </div>
             <div id="options9" class="options">
-                <button class="option-button" onclick="showQuestion10('Soccer')">Soccer ⚽</button>
-                <button class="option-button" onclick="showQuestion10('Basketball')">Basketball 🏀</button>
-                <button class="option-button" onclick="showQuestion10('Baseball')">Baseball ⚾</button>
-                <button class="option-button" onclick="showQuestion10('Tennis')">Tennis 🎾</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Soccer')">Soccer ⚽</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Basketball')">Basketball 🏀</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Baseball')">Baseball ⚾</button>
+                <button class="option-button" onclick="incrementFruitPoints('Grapes', 'Tennis')">Tennis 🎾</button>
             </div>
         </div>
 
@@ -288,119 +268,88 @@
     </main>
 
     <script>
-        // Show the next question and store the answer
-        function showQuestion2(color) {
-            document.getElementById('question1').classList.remove('active');
-            document.getElementById('options1').classList.add('hidden');
-            document.getElementById('question2').classList.add('active');
-            document.getElementById('options2').classList.remove('hidden');
-            document.getElementById('result').dataset.color = color;
+        let fruitPoints = {
+            'Apple': 0,
+            'Kiwi': 0,
+            'Banana': 0,
+            'Grapes': 0,
+            'Strawberry': 0,
+            'Avocado': 0,
+            'Lemon': 0,
+            'Blueberry': 0,
+            'Pineapple': 0
+        };
+
+        // Function to increment fruit points
+        function incrementFruitPoints(fruit, answer) {
+            fruitPoints[fruit]++;
+            // Now show the next question
+            const questionNumber = parseInt(event.target.parentNode.parentNode.id.replace('question', ''));
+            const nextQuestionNumber = questionNumber + 1;
+            const nextQuestionId = `question${nextQuestionNumber}`;
+            const nextOptionsId = `options${nextQuestionNumber}`;
+            document.getElementById(nextQuestionId).classList.remove('hidden');
+            document.getElementById(nextOptionsId).classList.remove('hidden');
+            document.getElementById(nextQuestionId).classList.add('active');
+            document.getElementById(`question${questionNumber}`).classList.remove('active');
+            document.getElementById(`options${questionNumber}`).classList.add('hidden');
+            // Store the answer (optional)
+            // document.getElementById('result').dataset[questionNumber] = answer;
         }
 
-        function showQuestion3(season) {
-            document.getElementById('question2').classList.remove('active');
-            document.getElementById('options2').classList.add('hidden');
-            document.getElementById('question3').classList.add('active');
-            document.getElementById('options3').classList.remove('hidden');
-            document.getElementById('result').dataset.season = season;
-        }
-
-        function showQuestion4(activity) {
-            document.getElementById('question3').classList.remove('active');
-            document.getElementById('options3').classList.add('hidden');
-            document.getElementById('question4').classList.add('active');
-            document.getElementById('options4').classList.remove('hidden');
-            document.getElementById('result').dataset.activity = activity;
-        }
-
-        function showQuestion5(timeOfDay) {
-            document.getElementById('question4').classList.remove('active');
-            document.getElementById('options4').classList.add('hidden');
-            document.getElementById('question5').classList.add('active');
-            document.getElementById('options5').classList.remove('hidden');
-            document.getElementById('result').dataset.timeOfDay = timeOfDay;
-        }
-
-        function showQuestion6(animal) {
-            document.getElementById('question5').classList.remove('active');
-            document.getElementById('options5').classList.add('hidden');
-            document.getElementById('question6').classList.add('active');
-            document.getElementById('options6').classList.remove('hidden');
-            document.getElementById('result').dataset.animal = animal;
-        }
-
-        function showQuestion7(musicGenre) {
-            document.getElementById('question6').classList.remove('active');
-            document.getElementById('options6').classList.add('hidden');
-            document.getElementById('question7').classList.add('active');
-            document.getElementById('options7').classList.remove('hidden');
-            document.getElementById('result').dataset.musicGenre = musicGenre;
-        }
-
-        function showQuestion8(bookType) {
-            document.getElementById('question7').classList.remove('active');
-            document.getElementById('options7').classList.add('hidden');
-            document.getElementById('question8').classList.add('active');
-            document.getElementById('options8').classList.remove('hidden');
-            document.getElementById('result').dataset.bookType = bookType;
-        }
-
-        function showQuestion9(weather) {
-            document.getElementById('question8').classList.remove('active');
-            document.getElementById('options8').classList.add('hidden');
-            document.getElementById('question9').classList.add('active');
-            document.getElementById('options9').classList.remove('hidden');
-            document.getElementById('result').dataset.weather = weather;
-        }
-
-        function showQuestion10(sport) {
-            document.getElementById('question9').classList.remove('active');
-            document.getElementById('options9').classList.add('hidden');
-            document.getElementById('question10').classList.add('active');
-            document.getElementById('options10').classList.remove('hidden');
-            document.getElementById('result').dataset.sport = sport;
-        }
-
+        // Function to display the result
         function showResult(hobby) {
-            const color = document.getElementById('result').dataset.color;
-            const season = document.getElementById('result').dataset.season;
-            const activity = document.getElementById('result').dataset.activity;
-            const timeOfDay = document.getElementById('result').dataset.timeOfDay;
-            const animal = document.getElementById('result').dataset.animal;
-            const musicGenre = document.getElementById('result').dataset.musicGenre;
-            const bookType = document.getElementById('result').dataset.bookType;
-            const weather = document.getElementById('result').dataset.weather;
-            const sport = document.getElementById('result').dataset.sport;
+            let highestPoints = 0;
+            let winningFruit = '';
+
+            // Find the fruit with the highest points
+            for (const fruit in fruitPoints) {
+                if (fruitPoints[fruit] > highestPoints) {
+                    highestPoints = fruitPoints[fruit];
+                    winningFruit = fruit;
+                }
+            }
+
             let fruitEmoji = '';
             let description = '';
 
-            if (color === 'Red' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning' && animal === 'Dog' && musicGenre === 'Pop' && bookType === 'Fiction' && weather === 'Sunny' && sport === 'Soccer' && hobby === 'Photography') {
-                fruitEmoji = '🍎'; // Apple
-                description = 'You are a classic Apple: sweet, refreshing, and always in season!';
-            } else if (color === 'Green' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon' && animal === 'Cat' && musicGenre === 'Rock' && bookType === 'Non-Fiction' && weather === 'Rainy' && sport === 'Basketball' && hobby === 'Painting') {
-                fruitEmoji = '🥝'; // Kiwi
-                description = 'You are a Kiwi: vibrant, adventurous, and full of zest!';
-            } else if (color === 'Yellow' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening' && animal === 'Bird' && musicGenre === 'Classical' && bookType === 'Mystery' && weather === 'Snowy' && sport === 'Baseball' && hobby === 'Music') {
-                fruitEmoji = '🍌'; // Banana
-                description = 'You are a Banana: fun, energetic, and perfect for a summer day!';
-            } else if (color === 'Purple' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night' && animal === 'Fish' && musicGenre === 'Jazz' && bookType === 'Romance' && weather === 'Cloudy' && sport === 'Tennis' && hobby === 'Writing') {
-                fruitEmoji = '🍇'; // Grapes
-                description = 'You are a Grape: sweet, relaxed, and ideal for cozy nights in!';
-            } else if (color === 'Red' && season === 'Summer' && activity === 'Cooking' && timeOfDay === 'Evening' && animal === 'Cat' && musicGenre === 'Classical' && bookType === 'Mystery' && weather === 'Rainy' && sport === 'Soccer' && hobby === 'Music') {
-                fruitEmoji = '🍓'; // Strawberry
-                description = 'You are a Strawberry: juicy, sweet, and always a delight!';
-            } else if (color === 'Green' && season === 'Fall' && activity === 'Gaming' && timeOfDay === 'Night' && animal === 'Dog' && musicGenre === 'Rock' && bookType === 'Fiction' && weather === 'Snowy' && sport === 'Basketball' && hobby === 'Painting') {
-                fruitEmoji = '🥑'; // Avocado
-                description = 'You are an Avocado: smooth, sophisticated, and always a healthy choice!';
-            } else if (color === 'Yellow' && season === 'Winter' && activity === 'Reading' && timeOfDay === 'Morning' && animal === 'Bird' && musicGenre === 'Jazz' && bookType === 'Non-Fiction' && weather === 'Sunny' && sport === 'Tennis' && hobby === 'Writing') {
-                fruitEmoji = '🍋'; // Lemon
-                description = 'You are a Lemon: bright, zesty, and full of personality!';
-            } else if (color === 'Purple' && season === 'Spring' && activity === 'Hiking' && timeOfDay === 'Afternoon' && animal === 'Fish' && musicGenre === 'Pop' && bookType === 'Romance' && weather === 'Cloudy' && sport === 'Baseball' && hobby === 'Photography') {
-                fruitEmoji = '🫐'; // Blueberry
-                description = 'You are a Blueberry: tiny, sweet, and always a favorite!';
-            } else {
-                fruitEmoji = '🍍'; // Pineapple as a fallback
-                description = 'You are a Pineapple: unique, tropical, and always a surprise!';
+            switch (winningFruit) {
+                case 'Apple':
+                    fruitEmoji = '🍎';
+                    description = 'You are a classic Apple: sweet, refreshing, and always in season!';
+                    break;
+                case 'Kiwi':
+                    fruitEmoji = '🥝';
+                    description = 'You are a Kiwi: vibrant, adventurous, and full of zest!';
+                    break;
+                case 'Banana':
+                    fruitEmoji = '🍌';
+                    description = 'You are a Banana: fun, energetic, and perfect for a summer day!';
+                    break;
+                case 'Grapes':
+                    fruitEmoji = '🍇';
+                    description = 'You are a Grape: sweet, relaxed, and ideal for cozy nights in!';
+                    break;
+                case 'Strawberry':
+                    fruitEmoji = '🍓';
+                    description = 'You are a Strawberry: juicy, sweet, and always a delight!';
+                    break;
+                case 'Avocado':
+                    fruitEmoji = '🥑';
+                    description = 'You are an Avocado: smooth, sophisticated, and always a healthy choice!';
+                    break;
+                case 'Lemon':
+                    fruitEmoji = '🍋';
+                    description = 'You are a Lemon: bright, zesty, and full of personality!';
+                    break;
+                case 'Blueberry':
+                    fruitEmoji = '🫐';
+                    description = 'You are a Blueberry: tiny, sweet, and always a favorite!';
+                    break;
+                default:
+                    fruitEmoji = '🍍';
+                    description = 'You are a Pineapple: unique, tropical, and always a surprise!';
+                    break;
             }
 
             document.getElementById('question10').classList.add('hidden');
