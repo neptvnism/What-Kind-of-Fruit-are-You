@@ -1,4 +1,4 @@
-// SESSION 7
+// SESSION 8: IMAGES SUPPORT
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,6 +123,13 @@
 
         .question-container.active {
             background-color: #FFF3CD;
+        }
+
+        .fruit-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 20px auto;
+            display: block;
         }
     </style>
 </head>
@@ -254,15 +261,15 @@
                 What's your favorite hobby?
             </div>
             <div id="options10" class="options">
-                <button class="option-button" onclick="showResult('Photography')">Photography 📸</button>
-                <button class="option-button" onclick="showResult('Painting')">Painting 🎨</button>
-                <button class="option-button" onclick="showResult('Music')">Music 🎶</button>
+                <button class="option-button" onclick="incrementFruitPoints('Apple', 'Photography')">Photography 📸</button>
+                <button class="option-button" onclick="incrementFruitPoints('Kiwi', 'Painting')">Painting 🎨</button>
+                <button class="option-button" onclick="incrementFruitPoints('Banana', 'Music')">Music 🎶</button>
                 <button class="option-button" onclick="showResult('Writing')">Writing ✍️</button>
             </div>
         </div>
 
         <div id="result" class="result hidden">
-            <div id="fruitEmoji" class="emoji-result"></div>
+            <div id="fruitImage" class="fruit-image"></div>
             <div id="fruitDescription" class="result-description"></div>
         </div>
     </main>
@@ -310,44 +317,44 @@
                 }
             }
 
-            let fruitEmoji = '';
+            let fruitImage = '';
             let description = '';
 
             switch (winningFruit) {
                 case 'Apple':
-                    fruitEmoji = '🍎';
+                    fruitImage = 'Apple.png';
                     description = 'You are a classic Apple: sweet, refreshing, and always in season!';
                     break;
                 case 'Kiwi':
-                    fruitEmoji = '🥝';
+                    fruitImage = 'Kiwi.png';
                     description = 'You are a Kiwi: vibrant, adventurous, and full of zest!';
                     break;
                 case 'Banana':
-                    fruitEmoji = '🍌';
+                    fruitImage = 'Banana.png';
                     description = 'You are a Banana: fun, energetic, and perfect for a summer day!';
                     break;
                 case 'Grapes':
-                    fruitEmoji = '🍇';
+                    fruitImage = 'Grapes.png';
                     description = 'You are a Grape: sweet, relaxed, and ideal for cozy nights in!';
                     break;
                 case 'Strawberry':
-                    fruitEmoji = '🍓';
+                    fruitImage = 'Strawberry.png';
                     description = 'You are a Strawberry: juicy, sweet, and always a delight!';
                     break;
                 case 'Avocado':
-                    fruitEmoji = '🥑';
+                    fruitImage = 'Avocado.png';
                     description = 'You are an Avocado: smooth, sophisticated, and always a healthy choice!';
                     break;
                 case 'Lemon':
-                    fruitEmoji = '🍋';
+                    fruitImage = 'Lemon.png';
                     description = 'You are a Lemon: bright, zesty, and full of personality!';
                     break;
                 case 'Blueberry':
-                    fruitEmoji = '🫐';
+                    fruitImage = 'Blueberry.png';
                     description = 'You are a Blueberry: tiny, sweet, and always a favorite!';
                     break;
                 default:
-                    fruitEmoji = '🍍';
+                    fruitImage = 'Pineapple.png';
                     description = 'You are a Pineapple: unique, tropical, and always a surprise!';
                     break;
             }
@@ -355,7 +362,7 @@
             document.getElementById('question10').classList.add('hidden');
             document.getElementById('options10').classList.add('hidden');
             document.getElementById('result').classList.remove('hidden');
-            document.getElementById('fruitEmoji').textContent = fruitEmoji;
+            document.getElementById('fruitImage').innerHTML = `<img src="${fruitImage}" alt="${winningFruit}" class="fruit-image">`;
             document.getElementById('fruitDescription').textContent = description;
         }
     </script>
